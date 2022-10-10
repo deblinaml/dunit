@@ -25,7 +25,7 @@ def train_model(model, dataset, options):
     times = []
     for epoch in range(options.starting_epoch, options.nb_epochs):
         epoch_start_time = time()
-        for data in dataset:# loop over data batches
+        for _, data in enumerate(dataset):# loop over data batches
             for optimizer in model.optimizers.values():
                 optimizer.zero_grad()
 
